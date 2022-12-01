@@ -1,0 +1,15 @@
+{
+  "name": "aoc",
+  "version": "1.0.0",
+  "description": "2022 advent of code solutions",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rebekah Cruz",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  }
+}
