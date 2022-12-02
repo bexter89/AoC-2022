@@ -10,7 +10,6 @@ const fs = require('fs')
 
 // The score is the score for the shape you selected
 // plus the score for the outcome of the round.
-let totalCalsContainer = [];
 
 fs.readFile('data.txt', 'utf-8', (err, data) => {
   if (err) throw err;

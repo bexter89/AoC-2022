@@ -13,6 +13,7 @@ fs.readFile('data.txt', 'utf-8', (err, data) => {
       //add to the count varible 
       totalCals = totalCals + Number(item);
     } else {
+      // if we hit this condition, we know there was a '\n', so push the total and reset it
       totalCalsContainer.push(totalCals)
       totalCals = 0; 
     }
