@@ -55,15 +55,6 @@ const priorities = {
   Z: 52,
 }
 
-function findPriority(letter) {
-  //97 - 122 for lowercase
-  if (letter.charCodeAt(0) >= 97) {
-    return letter.charCodeAt(0) - 96
-  } else { // 65 - 90 for uppercase
-    return letter.charCodeAt(0) - 64
-  }
-}
-
 fs.readFile('data.txt', 'utf-8', (err, data) => {
   if (err) throw err;
   const allData = data.split('\n');
