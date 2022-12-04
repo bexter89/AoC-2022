@@ -35,7 +35,7 @@ const priorities = {
   F: 32,
   G: 33,
   H: 34,
-  I:35,
+  I: 35,
   J: 36,
   K: 37,
   L: 38,
@@ -60,21 +60,21 @@ function findPriority(letter) {
   if (letter.charCodeAt(0) >= 97) {
     return letter.charCodeAt(0) - 96
   } else { // 65 - 90 for uppercase
-    return letter.charCodeAt(0) - 64 
+    return letter.charCodeAt(0) - 64
   }
 }
 
 fs.readFile('data.txt', 'utf-8', (err, data) => {
   if (err) throw err;
   const allData = data.split('\n');
-  
+
   let sum = 0;
   allData.forEach(rucksack => {
-    let middle = rucksack.length/2;
+    let middle = rucksack.length / 2;
     let container1 = rucksack.slice(0, middle)
     let container2 = rucksack.slice(middle)
-  
-    for (let i = 0; i < container1.length; i ++) {
+
+    for (let i = 0; i < container1.length; i++) {
       let item = container1[i];
       if (container2.includes(item)) {
         sum = sum + priorities[item];
@@ -89,7 +89,7 @@ fs.readFile('data.txt', 'utf-8', (err, data) => {
   if (err) throw err;
   const allData = data.split('\n');
   let sum = 0;
-  
+
   for (let i = 0; i < allData.length; i += 3) {
     let elf1 = allData[i];
     let elf2 = allData[i + 1];
@@ -98,17 +98,17 @@ fs.readFile('data.txt', 'utf-8', (err, data) => {
     // set default values for longest middle and shortest.
     let longest = elf1;
     let middle = elf2;
-    let shortest = elf3; 
+    let shortest = elf3;
 
     // reassign based on length 
     if (longest.length < middle.length) {
       if (middle.length > shortest.length) {
         longest = elf2;
-        middle = elf3; 
+        middle = elf3;
         shortest = elf1;
       } else {
         longest = elf3;
-        middle = elf2; 
+        middle = elf2;
         shortest = elf1;
       }
     };
@@ -121,5 +121,5 @@ fs.readFile('data.txt', 'utf-8', (err, data) => {
       }
     }
   }
-  console.log(sum)    
+  console.log(sum)
 })
